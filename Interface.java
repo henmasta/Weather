@@ -1,76 +1,82 @@
-//I don't know what better
-//import javax.swing.*;
+//<I don't know what better>\\
 //import java.awt.*;
+//import javax.swing.*;
+import java.io.File;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JLabel;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class Interface extends JFrame {
+	//<Why public? Well... Address to Proces class...>\\
 	public static JFrame window;
 	private static JButton button;
 	public static JTextField enterField;
-	private static JLabel city, temperature, weather, information;
 	private static Color informationColor, textColor;
+	private static JLabel city, temperature, weather, information;
 
 	public void Interface() {
-		window = new JFrame("Weather in");
-		enterField = new JTextField();
-		button = new JButton("process");
-		
-		information = new JLabel("Information");
-		city = new JLabel("City: ");
-		temperature = new JLabel("Temperature: ");
-		weather = new JLabel("Weather: ");
+		//<Initialization all variables>\\
+		enterField  	 = new JTextField();
+		city             = new JLabel("City: ");
+		button      	 = new JButton("process");
+		weather          = new JLabel("Weather: ");
 		informationColor = Color.decode("#eb1707");
-		textColor = Color.decode("#dbe0d9");
+		textColor        = Color.decode("#dbe0d9");
+		window      	 = new JFrame("Weather in");
+		information 	 = new JLabel("Information");
+		temperature      = new JLabel("Temperature: ");
 
-		window.add(enterField);
-		window.add(button);
-
-		button.setBounds(95, 50, 100, 30);
-		button.setFont(new Font("Arial", Font.BOLD, 15));
-		//button.setFocusable(true);
-		button.setBackground(Color.GRAY);
-
-		city.setBounds(10, 150, 80, 30);
-		city.setFont(new Font("Arial", Font.BOLD, 20));
-		city.setForeground(textColor);
-
-		temperature.setBounds(10, 200, 200, 30);
-		temperature.setFont(new Font("Arial", Font.BOLD, 20));
-		temperature.setForeground(textColor);
-
-		weather.setBounds(10, 250, 200, 30);
-		weather.setFont(new Font("Arial", Font.BOLD, 20));
-		weather.setForeground(textColor);
-
-		information.setBounds(10, 100, 200, 30);
-		information.setFont(new Font("Arial", Font.BOLD, 20));
-		information.setForeground(informationColor);
-
+		//<Add all elements on screen>\\
 		window.add(city);
-		window.add(temperature);
+		window.add(button);
 		window.add(weather);
+		window.add(enterField);
+		window.add(temperature);
 		window.add(information);
 
-		button.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                Process process = new Process();
-				process.Process();
-            }
-        });
+		//<Setting for button>\\
+		button.setBackground(Color.GRAY);
+		button.setBounds(95, 50, 100, 30);
+		button.setFont(new Font("Arial", Font.BOLD, 15));
 
+		//<Setting for city>\\
+		city.setForeground(textColor);
+		city.setBounds(10, 150, 80, 30);
+		city.setFont(new Font("Arial", Font.BOLD, 20));
+
+		//<Setting for temperature>\\
+		temperature.setForeground(textColor);
+		temperature.setBounds(10, 200, 200, 30);
+		temperature.setFont(new Font("Arial", Font.BOLD, 20));
+		
+		//<Setting for weather>\\
+		weather.setForeground(textColor);
+		weather.setBounds(10, 250, 200, 30);
+		weather.setFont(new Font("Arial", Font.BOLD, 20));
+		
+		//<Setting for information>\\
+		information.setBounds(10, 100, 200, 30);
+		information.setForeground(informationColor);
+		information.setFont(new Font("Arial", Font.BOLD, 20));
+
+		//<(little)Setting for enterField>\\
 		enterField.setBounds(10, 15, 280, 30);
 
+		//<Processing and listener for button>\\
+		button.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                Processing processing = new Processing();
+				processing.Processing();
+            }
+        });
 
 		window.setSize(300, 400);
 		window.setResizable(false);

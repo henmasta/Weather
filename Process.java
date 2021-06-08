@@ -1,9 +1,10 @@
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 import java.awt.event.*;
 
-class Process {
-	public void Process() {
+class Processing {
+	public void Processing() {
+		//<Tests>\\
 		Interface interfacee = new Interface();
 		interfacee.window.setTitle("Weaher in ы");
 		if(!Interface.enterField.equals(" ")){
