@@ -1,4 +1,5 @@
-# Weather It's little app for checking weather in you city on Java. 
+# Weather 
+It's little app for checking weather in you city on Java. 
 ## Why it exists? 
 Me fifteen y.o. and i wanna write code and study, hopeful will turn out.
 ## How it start?
