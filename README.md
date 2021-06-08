@@ -7,10 +7,10 @@ When all will be ready, i compiling .exe file and your start it how all programs
 
 and don't pay attention on
 
-'''Java
+```Java
 interfacee.window.setTitle("Weaher in ы");
 if(!Interface.enterField.equals(" ")){
 	System.out.println("lol");
 }
-'''
+```
 it little tests
