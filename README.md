@@ -8,7 +8,7 @@ When all will be ready, i compiling .exe file and your start it how all programs
 and don't pay attention on
 
 ```Java
-interfacee.window.setTitle("Weaher in ы");
+interfacee.window.setTitle("Weaher in h");
 if(!Interface.enterField.equals(" ")){
 	System.out.println("lol");
 }

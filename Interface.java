@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 class Interface extends JFrame {
 	//<Why public? Well... Address to Proces class...>\\
 	public static JFrame window;
+	private static ImageIcon icon;
 	private static JButton button;
 	public static JTextField enterField;
 	private static Color informationColor, textColor;
@@ -24,6 +25,7 @@ class Interface extends JFrame {
 
 	public void Interface() {
 		//<Initialization all variables>\\
+		
 		enterField  	 = new JTextField();
 		city             = new JLabel("City: ");
 		button      	 = new JButton("process");
@@ -32,6 +34,7 @@ class Interface extends JFrame {
 		textColor        = Color.decode("#dbe0d9");
 		window      	 = new JFrame("Weather in");
 		information 	 = new JLabel("Information");
+		icon 			 = new ImageIcon("icon.png");
 		temperature      = new JLabel("Temperature: ");
 
 		//<Add all elements on screen>\\
@@ -83,5 +86,6 @@ class Interface extends JFrame {
         window.setLayout(null);
         window.setVisible(true);
 		window.getContentPane().setBackground(new Color(0x6b6968));
+		window.setIconImage(icon.getImage());
 	}
 }
